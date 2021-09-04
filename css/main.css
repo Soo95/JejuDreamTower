@@ -1,0 +1,632 @@
+@font-face {
+    font-family: "Century Gothic";
+    src: url("http://www.myfontfree.com/data/200/c/century-gothic/Century Gothic.ttf");
+}
+@font-face {
+    font-family: 'NanumSquareRound';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+* {margin:0; padding:0;}
+li {list-style:none;}
+a {text-decoration:none;
+    display:block;
+    color:#555;
+    font-family: 'NanumSquareRound';
+}
+body{
+    font-family: 'NanumSquareRound';
+   }
+img {width:100%;}
+.wrap {
+    width:100%;
+}
+header {
+    width:90%;
+    z-index: 10;
+    top:50px;
+    /* 가로길이 자동일 때 브라우저의 가운데로 이동 */
+    position:absolute;  /*section이랑 겹침 */
+    left:50%;
+    transform:translateX(-50%);
+}
+header .logo {
+    width:100px;
+    margin:0 auto;
+}
+header .top-menu {
+    position:absolute;  /*top-menu의 위치 쉽게 배치 */
+    top:50px;
+    right:0px;
+}
+header .top-menu ul li {
+    float:left;
+    margin:10px;
+    background-color: #e7b464;
+    border-radius: 3px;
+}
+header .top-menu ul li a {
+    padding:7px;
+    font-size:14px;
+    color:#fff;
+}
+header .top-menu ul li:last-child {
+    background-color:#777;
+}
+header nav {
+    width:80%;
+    margin:50px auto;
+    box-sizing: border-box;
+    position:relative;
+}
+header nav > ul > li {
+    width:20%;
+    float:left;
+    padding:10px;
+    box-sizing: border-box;
+    /*position:relative;  .sub 위치의 기준 */
+}
+header nav > ul > li > a {
+    font-size:20px;
+    line-height:20px;
+    color:#fff;
+    text-align: center;
+    font-family: Century Gothic, sans-serif;
+    font-weight:bold;
+    white-space: nowrap; /*자동줄바꿈 방지 */
+}
+header nav > ul > li > a:hover {
+    color:#e7b464;
+}
+header nav ul span {
+    display: inline;
+    padding:5px 0;
+    position:relative;
+}
+span:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #e7b464;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+span:hover:after { 
+    width: 100%; 
+    left: 0; 
+}
+header nav > ul > li > a {
+    color:#fff;
+    font-size:20px;
+    margin-bottom: 15px;
+}
+header nav .sub {
+    width:20%;
+    background-color: #fff;
+    opacity:0.9;
+    float:left;
+    margin-top:12px;
+    margin:0 auto;
+    text-align:center;
+    max-height:0px;
+    overflow:hidden;
+    transition:max-height 0.7s;
+    position: absolute;
+    clear: both;
+}
+header nav > ul > li:hover .sub{
+    max-height:1200px;
+}
+header nav ul li h3,
+header nav .sub li h3 a {
+    color:#e7b464;
+    font-size:16px;
+    padding:7px;
+}
+header nav .sub > li > a {
+    font-size: 14px;
+    color:#555;
+    text-align:center;
+    padding:5px;
+    white-space: nowrap;
+}
+header nav .sub li > a:hover {
+    text-decoration:underline;
+}
+section {
+    width:100%;
+}
+.black20 {
+    background-color: black;
+    opacity: 0.2;
+    width:100%;
+    /* height:100%; */
+    position: absolute;
+    z-index:5;
+}
+section .visual {
+    width:100%;
+    height:960px;
+    position:relative;
+}
+section .visual ul {
+    width:100%;
+    height: 100%;
+}
+section .visual ul li {
+    width:100%;
+    height: 100%;
+    position: absolute;     /*이미지 겹침*/
+    text-align: center;
+    overflow:hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+section .visual .bx-wrapper {
+    border:none;
+    box-shadow: none;
+    padding:0;
+}
+section .visual .bx-wrapper .bx-pager {
+    display:none;
+}
+section .visual .deco {
+    position:absolute;
+    z-index:6;
+    top:55%;
+    left:50%;
+    transform: translateX(-50%);
+}
+section .visual .deco h1 {
+    color:#fff;
+    font-size:90px;
+    line-height:90px;
+    margin:10px;
+    font-family: Century Gothic, sans-serif;
+    white-space: nowrap;
+    text-align:center;
+}
+section .info {
+    width:1200px;
+    height:auto;
+    margin:0 auto; /*부모영역의 가운데로 정렬*/
+    margin-top:100px;
+    overflow:hidden;
+    border-radius:10px;
+}
+section .info .info-left {
+    width:550px;
+    float: left;
+    display:block;
+}
+section .info .info-right {
+    width:550px;
+    float:left;
+    display:block;
+}
+section .info .room {
+    width:540px;
+    height:660px;
+    border-radius:10px;
+    overflow: hidden;
+    position:relative;
+}
+section .info .room h3 {
+    color:#fff;
+    top:10%;
+    left:45%;
+    position:absolute;
+    z-index: 4;
+}
+section .info .room .slider .bx-wrapper {
+    border:none;
+    box-shadow: none;
+    position:relative;
+}
+section .info .room .slider .bx-wrapper .bx-pager {
+    position:absolute;
+    background-color:rgba(0, 0,0, 0.5);
+    bottom:-10px;
+    left:0;
+    width:100%;
+    height:50px;
+    padding-top:15px;
+    border-radius:10px;
+}
+section .info .room .slider .bx-wrapper .bx-pager .bx-pager-item a {
+    width:14px;
+    height:14px;
+    background-color:#fff;
+    border-radius: 100%;
+    margin:0px 10px;
+}
+section .info .room .slider .bx-wrapper .bx-pager .bx-pager-item a.active {
+    background-color:transparent;
+    border:1px solid #fff;
+}
+section .info .intro {
+    width:600px;
+    height:386px;
+    margin-left: 20px;
+    margin-bottom:20px;
+    background-image: url(../img/introduce.png);
+    background-position:center; /*이미지가 클 때 사용*/
+    background-repeat:no-repeat;
+    background-size:cover;
+    box-sizing:border-box;
+    position:relative;
+    border-radius:10px;
+}
+section .info .intro h3 {
+    color:#fff;
+    margin-bottom:10px;
+    left:20px;
+    top:260px;
+    position:absolute;
+}
+section .info .intro p {
+    color:#fff;
+    width:80%;
+    line-height:20px;
+    float:left;
+    text-align:left;
+    position:absolute;
+    left:20px;
+    top:300px;
+}
+section .info .reserve {
+    width:540px;
+    height:220px;
+    margin-top:20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-image: url(../img/reserve.png);  /*이미지파일을 css파일보다 2단계 나와서 찾아야하기 때문에 .. 꼭 붙여야함*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    position:relative;
+}
+section .info .reserve h3 {
+    color:#fff;
+    float:left;
+    left:20px;
+    top:30px;
+    position:absolute;
+}
+section .info .reserve ul li a {
+    color:#fff;
+    border:2px solid #fff;
+    font-size: 14px;
+    left:20px;
+    top:70px;
+    position:absolute;
+    padding:5px;
+}
+section .info .location {
+    width:600px;
+    height:494px;
+    margin-left: 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-image: url(../img/location.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position:relative;
+}
+section .info .location h3 {
+    color:#fff;
+    left:43%;
+    top:23%;
+    position:absolute;
+}
+section .info .location ul li a {
+    color:#fff;
+    border:2px solid #fff;
+    font-size: 14px;
+    left:43%;
+    top:33%;
+    position:absolute;
+    padding:5px;
+}
+section h2 {
+    color:#a89a8a;
+    font-size: 20px;
+    text-align:center;
+    padding:20px;
+}
+section p {
+    color:#555;
+    font-size:14px;
+    text-align: center;
+    padding:10px;
+}
+section h2 span {
+    /* background-image; */
+    width:40px;
+    height:40px;
+    margin:0 auto;
+}
+section .offers {
+    width:1200px;
+    margin:0 auto;
+    margin-top:100px;
+    overflow:auto;
+}
+section .offers .spa,
+section .offers .han,
+section .offers .restaurant {
+    width:373px;
+    height:510px;
+    margin-right:20px;
+    float:left;
+    border-radius: 10px;
+    box-sizing:border-box;
+    background-image: url(../img/offers1.png);
+    position:relative;
+}
+section .offers .han {
+    background-image: url(../img/offers2.png);
+}
+section .offers .restaurant {
+    background-image: url(../img/offers3.png);
+}
+section .offers .spa h3 {
+    color:#fff;
+    left:10%;
+    top:12%;
+    position:absolute;
+    font-size:20px;
+    font-family: "Century Gothic";
+}
+section .offers .spa p {
+    color:#fff;
+    left:20%;
+    top:50%;
+    width:70%;
+    position:absolute;
+    text-align: center;
+    font-weight:bold;
+}
+section .offers .han h3 {
+    color:#fff;
+    left:27%;
+    top:50%;
+    position:absolute;
+    font-size:20px;
+    font-family: "Century Gothic";
+}
+section .offers .han p {
+    color:#fff;
+    left:14%;
+    top:73%;
+    width:70%;
+    position:absolute;
+    text-align: center;
+    font-weight:bold;
+}
+section .offers .restaurant h3 {
+    color:#fff;
+    left:65%;
+    top:73%;
+    position:absolute;
+    font-size:20px;
+    font-family: "Century Gothic";
+    text-align:right;
+}
+section .offers .restaurant .p1 {
+    color:#fff;
+    left:14%;
+    top:13%;
+    width:70%;
+    position:absolute;
+    text-align: center;
+    font-weight:bold;
+}
+section .offers .restaurant .p2 {
+    color:#fff;
+    left:15%;
+    top:18%;
+    width:70%;
+    position:absolute;
+    text-align: center;
+    font-weight:bold;
+}
+section .sunset {
+    background-image: url(../img/sun.png);
+    width:100%;
+    height:200px;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* float:left; */
+    margin-top:100px;
+    position:relative;
+    box-sizing: border-box;
+    padding:40px;
+    color:#fff;
+    text-align: center;
+}
+section .sunset h2 {
+    color:#fff;
+    left:10%;
+    top:40px;
+    font-size:20px;
+    position:absolute;
+}
+section .sunset p {
+    color:#fff;
+    left:13%;
+    top:60%;
+    font-size:14px;
+    position:absolute;
+    
+}
+section .sunset ul li a {
+    color:#fff;
+    border:2px solid #fff;
+    padding:5px;
+    font-size: 14px;
+    width:100px;
+    height:25px;
+    box-sizing: border-box;
+}
+section .sunset a:hover {
+    background-color:#555;
+}
+section .event {
+    width:1200px;
+    margin:0 auto;
+    margin-top:100px;
+    overflow:auto;
+}
+section .event-list h2 {
+    text-align: center;
+    font-size: 40px;
+}
+section .event-list h2{
+    /*글자 위 아이콘 넣는 법
+    display:block;
+    content: "";
+    width:40px;
+    height:60px;
+    margin:0 auto;
+    background-image: ;
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;*/
+}
+section .event .event-list {
+    width:100%;
+    margin-top:89px;
+}
+section .event .event-list ul li {
+    width:373px;
+    height:400px;
+    position:relative;
+    float:left;
+    margin-right:20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-image: url(../img/event1.png);
+}
+section .event .event-list ul li:nth-child(2) {
+    background-image: url(../img/event2.png);
+}
+section .event .event-list ul li:last-child {
+    background-image: url(../img/event3.png);
+    margin-right:0;
+}
+
+section .event .event-list ul li div {
+    position:absolute;
+    left:0;
+    bottom:0;
+}
+section .event .event-list ul li h3 {
+    color:#fff;
+    font-size:20px;
+    text-align: center;
+
+}
+section .event .event-list ul li p{
+    color:#e5ecf0;
+}
+section .sns {
+    width:1200px;
+    margin-top:100px;
+    margin:0 auto;
+    overflow:auto;
+}
+section .sns-wrap {
+    width:100%;
+    margin:0 auto;
+    position:relative;
+}
+section .sns-wrap ul li {
+    margin:0 auto;
+    box-sizing: border-box;
+}
+section .sns-wrap .sns-img {
+    width:232px;
+    height:415px;
+    float:left;
+    left:50%;
+    margin:0 auto;
+    box-sizing: border-box;
+    /* position:relative; */
+}
+section .sns-wrap .sns-icon {
+    width:200px;
+    height:200px;
+    float:left;
+    position:absolute;
+    padding:10px;
+}
+footer {
+    width:100%;
+    background-color: #a89a8a;
+    clear:both;     /*sunset영역의 float:left 해제 */
+    margin-top:100px;
+    padding:50px 0;
+    float:left;     /*sunset영영에 margin-top이 겹쳐지는 현상을 없앰*/
+}
+footer .footer-logo {
+    width:100px;
+    margin:0 auto;
+    margin-bottom:20px;
+}
+footer .sns-share {
+    margin:0 auto;
+    width:250px;
+}
+footer .sns-share ul li a img {
+    width:40px;
+    height:40px;
+    float:left;
+    margin:10px;
+}
+footer address {
+    clear:both;
+    color:#fff;
+    font-size:14px;
+    line-height: 20px;
+    text-align: center;
+}
+footer p {
+    color:#fff;
+    font-size:12px;
+    text-align: center;
+    margin-top:20px;
+}
+footer p span img {
+    width:40px;
+    height:40px;
+    padding:20px;
+}
+.top {
+width:50px;
+height:50px;
+position:fixed;
+right:30px;
+bottom:30px;
+color:#fff;
+border-radius: 5px;
+background-color: #777;
+text-align: center;
+line-height: 50px;
+font-size: 20px;
+z-index: 100;
+font-weight: bold;
+cursor: pointer;
+}
+.top:hover {
+    background-color: #555;
+}
